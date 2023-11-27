@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash/python3
 # This is a Shell script that runs a Python script
 # The Python file name is stored in the environment variable $PYFILE
 
