@@ -1,20 +1,2 @@
-#!/bin/bash/python3
-# This is a Shell script that runs a Python script
-# The Python file name is stored in the environment variable $PYFILE
-
-# Check if the environment variable $PYFILE is set and not empty
-if [ -z "$PYFILE" ]; then
-  # If not, print an error message and exit
-  echo "Error: The environment variable \$PYFILE is not set or empty."
-  exit 1
-fi
-
-# Check if the Python file exists and is readable
-if [ -f "$PYFILE" ] && [ -r "$PYFILE" ]; then
-  # If yes, run the Python script using the python command
-  python "$PYFILE"
-else
-  # If not, print an error message and exit
-  echo "Error: The file \$PYFILE does not exist or is not readable."
-  exit 2
-fi
+#!/bin/bash/
+python3 $PYFILE
