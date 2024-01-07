@@ -8,5 +8,5 @@ for i in range(122, 64, -1):
     # Add the character to the result string based on the conditions
     result += chr(i) if i % 2 == 0 else chr(i - 32)
 
-# Print the result without a newline at the end
+# Print the result without a newline at the end.
 print(result, end="")
