@@ -1,41 +1,17 @@
 #!/usr/bin/python3
+"""This module adds all arguments to a Python list and save them to a file."""
 
-import json
 
-def save_to_json_file(data, filename="add_item.json"):
-  """Saves a Python data structure to a JSON file.
+import sys
 
-  Args:
-    data: The Python data to be saved.
-    filename: The name of the JSON file to save to.
-  """
+if __name__ == "__main__":
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    load_from_json_file = \
+        __import__('6-load_from_json_file').load_from_json_file
 
-  with open(filename, "w") as file:
-    json.dump(data, file)
-
-def load_from_json_file(filename="add_item.json"):
-  """Loads a Python data structure from a JSON file.
-
-  Args:
-    filename: The name of the JSON file to load from.
-
-  Returns:
-    The loaded Python data structure.
-  """
-
-  with open(filename, "r") as file:
-    return json.load(file)
-
-# Collect arguments from the command line
-args = list(sys.argv[1:])  # Exclude the script name itself
-
-# Load existing items from the JSON file, if it exists
-existing_items = load_from_json_file()
-
-# Combine existing items with new arguments
-all_items = existing_items + args
-
-# Save the combined list to the JSON file
-save_to_json_file(all_items)
-
-print(f"Items saved to add_item.json: {all_items}")
+    try:
+        items = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        items = []
+    items.extend(sys.argv[1:])
+    save_to_json_file(items, "add_item.json")
