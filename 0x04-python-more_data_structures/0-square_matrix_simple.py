@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+    Create a new empty matrix of the same size
+"""
+
 def square_matrix_simple(matrix=[]):
 
   # Check if matrix is a valid 2D list of integers
@@ -9,7 +13,7 @@ def square_matrix_simple(matrix=[]):
     if not all(isinstance(x, int) for x in row):
       raise ValueError("Matrix must only contain integers.")
 
-  # Create a new empty matrix of the same size
+
   new_matrix = [[0 for _ in range(len(row))] for row in matrix]
 
   # Loop through each element and replace it with its square in the new matrix
