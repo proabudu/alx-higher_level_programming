@@ -52,4 +52,3 @@ listint_t *insert_node(listint_t **head, int number) {
     /* Return the pointer to the new node */
     return new;
 }
-
