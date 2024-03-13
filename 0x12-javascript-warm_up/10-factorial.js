@@ -1,6 +1,11 @@
 #!/usr/bin/node
 
-function factorial (n) {
+// Function to calculate factorial of a number
+function factorial(n) {
+      // If n is 0 or NaN, return 1 (base case for factorial)
       return n === 0 || isNaN(n) ? 1 : n * factorial(n - 1);
-    } // factorial function
-    console.log(factorial(Number(process.argv[2])));
+    } // End of factorial function
+  
+  // Get the input number from command line arguments and calculate its factorial
+  console.log(factorial(Number(process.argv[2])));
+  
