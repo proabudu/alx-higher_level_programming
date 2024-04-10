@@ -2,7 +2,7 @@
 
 'use strict'; // Enable strict mode
 // Function to calculate factorial of a number
-function factorial(n) {
+function factorial (n) {
   // If n is 0 or NaN, return 1 (base case for factorial)
   return n === 0 || isNaN(n) ? 1 : n * factorial(n - 1);
 } // End of factorial function
